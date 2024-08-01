@@ -1,0 +1,125 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Icons font CSS-->
+    <link href="{% static 'instant_exam/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'instant_exam/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'instant_exam/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'instant_exam/vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'instant_exam/css/main.css' %}" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
+    
+    <title>Profile</title>
+    {% comment %} <script type="text/javascript" >
+        function myFunction(){
+            if ({{user_data.gender}}=="Male"){
+                alert("hi")
+            }
+        }
+        </script> {% endcomment %}
+        <style>
+    .num {
+        display: block;
+        overflow: hidden;
+
+    }
+    .lbl {
+        float: left;
+        padding-right:20px;
+    }
+    .vertical-center {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding-left:180px;
+      }
+      .container {
+        height: 50px;
+        position: relative;
+      }
+      fieldset {
+        display: block;
+        margin-left: 2px;
+        margin-right: 2px;
+        padding-top: 0.35em;
+        padding-bottom: 0.625em;
+        padding-left: 0.75em;
+        padding-right: 0.75em;
+        border: 0.5px solid rgb(156, 153, 153);
+      }
+      .card{
+        background:RGBA(13, 70, 83, 0.78);
+      }
+      h4{
+          color:rgba(255, 255, 255,255);
+          padding:30px;
+          padding-bottom:50px;
+      }
+   
+    
+   </style>
+</head>
+<body style="color:white" onload="myFunction()">
+    <section id="banner" class="banner">
+        <div  class="bg-color p-t-180 p-b-100 font-robo" style="padding-top:70px;padding-left:300px; padding-right:170px;">
+            
+                <div >
+                    <div class="card row row-space" style="padding-right:80px;padding-top:50px;padding-bottom:20px;">
+                    <div class="card-heading "></div>
+                    <div class="card-body" style="padding-left:100px;paddding:10px;">
+                    <h2 class="title" style="color: rgba(12, 184, 182);">FAQ</h2>
+                    
+                    Q1. Who uses it?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;The principal bedside user is the nurse, NGO, doctors, screeners, etc who uses it &nbsp;&nbsp;&nbsp;&nbsp;for all patient
+                     details, medical information, prediction of desease and follow-up. <br><br>
+                      
+                    Q2. How does it function?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;The system accepts the patient vital-signs added directly by the nurse in order to &nbsp;&nbsp;&nbsp;&nbsp;compile a complete observation record, 
+                    calculate the accuracy using various &nbsp;&nbsp;&nbsp;&nbsp;algorithm and based on the results final desease is predicted. <br><br>
+
+                    Q3. How to Raise a query?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Visit help section and enter details about the problem faced and submit your issues.<br><br>
+
+                    Q4. Is it feasible?<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Yes, It is feasible 
+
+            
+                </div>
+
+                  </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'instant_exam/vendor/jquery/jquery.min.js' %}"></script>
+    <!-- Vendor JS-->
+    <script src="{% static 'instant_exam/vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'instant_exam/vendor/datepicker/moment.min.js' %}"></script>
+    <script src="{% static 'instant_exam/vendor/datepicker/daterangepicker.js' %}"></script>
+
+    <!-- Main JS-->
+    <script src="{% static 'instant_exam/js/global.js' %}"></script>
+</body>
+</html>

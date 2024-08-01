@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DiagnoseIndia</title>
+  <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway|Candal">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
+  <!-- <style>
+    .section-padding{
+        text-align: center;
+        padding-left: 200px;
+    }
+    </style> -->
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <section id="banner" class="banner">
+        <div class="bg-color">
+          <div class="container">
+            <div class="row">
+              <div class="banner-info" >
+                <section id="cta-2" class="section-padding" style="width: 500px; height:350px; padding:50px; padding-top:10px; text-align:center;">
+                    <div class="container" >
+                      <div class=" row">
+                        <div class="col-md-2"></div>
+                        <section id="contact" class="section-padding" >
+                            <div class="container">
+                              <div class="row">
+                                <div class="col-md-4 col-sm-4 marb20">
+                                  <div class="contact-info">
+                                    <h2 class="cnt-ttl" style="color:white;">Login</h2>
+                                    <div class="space"></div>
+                                    <div id="sendmessage">Login Successfull!</div>
+                                    <div id="errormessage"></div>
+                                    <form action="" method="post" role="form" class="contactForm">
+                                      {% csrf_token %}
+                                      <div class="form-group">
+                                        <input type="text" class="form-control br-radius-zero" name="mob" id="mob" data-rule="maxlen:12" placeholder="Mobile No." />
+                                        <div class="validation"></div>
+                                      </div>
+                                      <div class="form-group">
+                                        <input type="text" class="form-control br-radius-zero" name="otp" id="otp" placeholder="Enter OTP" data-rule="minlen:6" data-msg="Please enter valid OTP" />
+                                        <div class="validation"></div>
+                                      </div>
+                                      <div class="form-action">
+                                        <button type="submit" class="btn btn-form">Login</button>
+                                      </div>
+                                    </form>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                        <div class="col-md-2"></div>
+                      </div>
+                    </div>
+                  </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+
+
+  <script src="{% static 'home/js/jquery.min.js' %}"></script>
+  <script src="{% static 'home/js/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'home/js/custom.js' %}"></script>
+  <script src="{% static 'home/contactform/contactform.js' %}"></script>
+
+</body>
+
+</html>

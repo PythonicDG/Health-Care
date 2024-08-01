@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>instant exam form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'register/css/style.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
+ 
+
+    
+</head>
+<body >
+  <section class="img" onload="resetSelection()" style="background-image: url({% static 'register/images/health1.jpg'%}); width:100%;" >
+    <div  class="bg-color p-t-180 p-b-100 font-robo ftco-section" >
+    
+    <div class=""> 
+    <div class="container">
+     <div class="row justify-content-center">
+            <div class="col-md-4 text-center mb-4">
+              <h2 class="heading-section"> Test</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-3 col-lg-6">
+              <div class="login-wrap">
+                {% comment %} <h3 class="text-center mb-4">Create Your Account</h3> {% endcomment %}
+                <form action="" method="POST" class="signup-form" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  {% comment %} <div class="form-group mb-2">
+                    <label class="first_name" for="first_name">first Name</label>
+                    <input type="text" id="first_name" name="first_name" class="form-control" placeholder="Enter first name" required="" />
+                    <span class="icon fa fa-user-o"></span>
+                  </div>
+                  <div class="form-group mb-2">
+                    <label class="last_name" for="last_name">last name</label>
+                    <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Enter last name" required="" />
+                    <span class="icon fa fa-user-o"></span>
+                  </div> {% endcomment %}
+                  
+                  {% comment %} <div class="form-group mb-2">
+                    <label class="address" for="Gender">gender</label><br>
+                   {% comment %} <h6 class="mb-0 me-2">Gender:</h6><br> 
+                   <input class="form-check-input" type="radio" name="Gender" id="femaleGender" value="Female" />
+                   <label class="form-check-label" for="femaleGender">Female</label><br>
+                   <input
+                   class="form-check-input" type="radio" name="Gender" id="maleGender" value="Male"/>
+                   <label class="form-check-label" for="maleGender">Male</label><br>
+                   <!--input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender" value="option3"/>
+                   <label class="form-check-label" for="otherGender">Other</label><br-->
+                 {% endcomment %}
+                 
+                    <div class="form-group mb-2">
+                      <label class="dob" for="dob">DOB</label>
+                      <input type="date" id="dob" name="dob" class="form-control" placeholder="Enter DOB" required />
+                      <!--span class="fa fa-calendar"></span-->
+                    </div>
+                    <div class="form-group mb-2">
+                      <label class="adhaar_no" for="adhaar_no">Adhaar No</label>
+                      <input  type="text" id="adhaar_no" name="adhaar_no" class="form-control" maxlength="12" placeholder="Enter Adhaar no" pattern="[1-9]{1}[0-9]{11}" required/>
+                      <!--span class="fa fa-id-card"></span-->
+                    </div>
+                    
+                    <div class="form-group">
+                      <input type="submit" name="submit" value="submit" class="form-control btn btn-primary submit px-3"  onclick="formValidation()" / >
+                    </div>
+                  </form>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                
+<script src="{% static 'registerjs/jquery.min.js'%}"></script>
+<script src="{% static 'registerjs/popper.js'%}"></script>
+<script src="{% static 'registerjs/bootstrap.min.js'%}"></script>
+<script src="{% static 'registerjs/main.js'%}"></script>
+</body>
+</html>
+
+
+                        
+

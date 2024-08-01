@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+            <div class="container">
+                <div>
+                <h1>GeneralSurvey List</h1>
+                {%for GeneralSurvey in object_list%}
+                <li>
+                    {{GeneralSurvey.no_of_family_members}}
+                    {{GeneralSurvey.name_of_head_of_family}}
+                    {{GeneralSurvey.age_of_head_of_family}}
+                    {{GeneralSurvey.no_of_other_adult_males}}
+                    {{GeneralSurvey.no_of_other_adult_female}}
+                    {{GeneralSurvey.no_of_male_children}}
+                    {{GeneralSurvey.no_of_female_children}}
+                </li> 
+                {% endfor %}            
+                </div>
+
+                <div>
+                <h1>HealthSurvey List</h1>
+                {%for HealthSurvey in object_list%}
+                <li>
+                    {{HealthSurvey.drinking_water_Source}}
+                    {{HealthSurvey.drinking_water_distance}}
+                    {{HealthSurvey.drinking_water_requiring_treatment}}
+                    {{HealthSurvey.non_usage_of_toilets}}
+                    {{HealthSurvey.distance_of_subcentres}}
+                    {{HealthSurvey.distance_of_primary_health_centers}}
+                    {{HealthSurvey.distance_of_community_health_centers}}
+                    {{HealthSurvey.distance_of_district_hospitals}}
+                    {{HealthSurvey.distance_of_pathalogy_lab}}
+                    {{HealthSurvey.distance_of_medical_store}}
+                    {{HealthSurvey.status_of_delivery_of_children}}
+                    {{HealthSurvey.status_of_vaccination_of_children}}
+                    {{HealthSurvey.status_of_female_related_problems}}
+                    {{HealthSurvey.centrally_issued_health_insurance}}
+                    {{HealthSurvey.state_issued_health_insurance}}
+                    {{HealthSurvey.personal_health_insurance}}
+                    
+                </li> 
+                {% endfor %} 
+                </div>
+
+                <div>
+                    <h1>SocioEconomicSurvey List</h1>
+                    {%for SocioEconomicSurvey in object_list%}
+                    <li>
+                        {{SocioEconomicSurvey.no_of_earners}}
+                        {{SocioEconomicSurvey.name_of_earners}}
+                        {{SocioEconomicSurvey.age_of_earners}}
+                        {{SocioEconomicSurvey.occupation}}
+                        {{SocioEconomicSurvey.bank_account}}
+                        {{SocioEconomicSurvey.house}}
+                        {{SocioEconomicSurvey.total_income}}
+                        {{SocioEconomicSurvey.food_expense}}
+                        {{SocioEconomicSurvey.health_expense}}
+                        {{SocioEconomicSurvey.education_expense}}
+                        {{SocioEconomicSurvey.intoxication_expense}}
+                        {{SocioEconomicSurvey.conveyance_expense}}
+                        {{SocioEconomicSurvey.cultivable_land}}
+                    </li> 
+                    {% endfor %} 
+                </div>
+    
+            </div> 
+    </form> 
+</body>
+</html>

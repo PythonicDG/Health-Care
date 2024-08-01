@@ -1,0 +1,255 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'register/css/style.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
+<style>
+  .div1{
+    padding:8px;
+  }
+</style>
+</head>
+<body >
+  <section class="img" onload="resetSelection()" style="background-image: url({% static 'register/images/health1.jpg'%}); width:100%;">
+    <div  class="bg-color p-t-180 p-b-100 font-robo ftco-section" >
+    
+    <div class=""> 
+    <div class="container">
+      <!--form method="POST">
+        {% csrf_token %--}
+<!--body onload="resetSelection()"-->
+
+          <div class="row justify-content-center">
+            <div class="col-md-4 text-center mb-4">
+              <h2 class="heading-section">General Survey</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-3 col-lg-6">
+              <div class="login-wrap">
+                <!--h3 class="text-center mb-4">Create Your Account</h3-->
+                <form action="" method="POST" class="signup-form" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <div class="form-group mb-2">
+                    <label class="no_of_family_members" for="adhar">Aadhar No.</label>
+                    <input type="text" id="adhar" name="adhar" maxlength="12" class="form-control" placeholder=" Enter Aadhar" required="" />
+                    
+                  </div>
+                  <div class="form-group mb-2">
+                    <label class="no_of_family_members" for="family_members">No of family Members</label>
+                    <input type="text" id="no_of_family_members" name="no_of_family_members" class="form-control" placeholder="Enter No of family Members" required="" />
+                    
+                  </div>
+                  <div class="form-group mb-2">
+                    <label class="name_of_head_of_family" for="head_of_family">Name of head of the family</label>
+                    <input type="text" id="name_of_head_of_family" name="name_of_head_of_family" class="form-control" placeholder="Enter Name of head of the family" required="" />
+                
+                  </div>
+                  <div class="form-group mb-2">
+                    <label class="age_of_head_of_family" for="age_of_head">Age of head of the family</label>
+                    <input type="text" id="age_of_head_of_family" name="age_of_head_of_family" class="form-control" placeholder="Enter Age of head of the family" required="" />
+                   
+                  </div>
+                  <div class="form-group mb-2">
+                    <label class="no_of_other_adult_males" for="adult_males">No. of other adult males</label>
+                    <input type="text" id="no_of_other_adult_males" name="no_of_other_adult_males" class="form-control" placeholder="Enter No of other adulth Males" required="" />
+                    
+                  </div>
+                  <div class="form-group mb-2">
+                    <label class="no_of_other_adult_female" for="adult_female">No. of other adult females</label>
+                    <input type="text" id="no_of_other_adult_female" name="no_of_other_adult_female" class="form-control" placeholder="Enter No of other adulth Females" required="" />
+                  
+                  </div>
+                  <div class="form-group mb-2">
+                    <label class="no_of_male_children" for="male_children">No. of male Children</label>
+                    <input type="text" id="no_of_male_children" name="no_of_male_children" class="form-control" placeholder="Enter No of male children" required="" />
+                  
+                  </div>
+                  <div class="form-group mb-2">
+                    <label class="no_of_female_children" for="female_children">No. of female Children</label>
+                    <input type="text" id="no_of_female_children" name="no_of_female_children" class="form-control" placeholder="Enter No of female children" required="" />
+                
+                  </div>
+                  
+                  <div class="div1">
+                    <select class="select" name="water_source">
+                      <option value="1">Drinking Water Sources</option>
+                      <option value="hand pump">Hand Pump</option>
+                      <option value="wells">Wells</option>
+                      <option value="boring">Boring</option>
+                      <option value="rivers/ponds">Rivers/Ponds</option>
+                      <option value="any other">Any other</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="water_distance">
+                      <option value="1">Drinking Water Distance</option>
+                      <option value="within house">Within House</option>
+                      <option value="within 50 metres">Within 50 metres</option>
+                      <option value="50-200 metres">50-200 Metres</option>
+                      <option value="200 metres-1km">200 metres-1km</option>
+                      <option value="more than 1km">More than 1km</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="water_treatment">
+                      <option value="1">Drinking Water Requiring Treatment</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                      <option value="don't know">Don't Know</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="non_usage_of_toilets">
+                      <option value="1">Non usage of toilets</option>
+                      <option value="no toilet">No toilet</option>
+                      <option value="improperly built">Improperly Built</option>
+                      <option value="water scarcity">Water Scarcity</option>
+                      <option value="other">Other</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="distance_of_subcentres">
+                      <option value="1">Distance of Subcentres</option>
+                      <option value="within 5 minutes">Within 5 Minutes</option>
+                      <option value="5-15 minutes">5-15 minutes</option>
+                      <option value="15-30 minutes">15-30 Minutes</option>
+                      <option value="more than 30 minutes">More than 30 minutes</option>
+                      </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="distance_of_primary_centers">
+                      <option value="1">Distance of Primary Health Centers</option>
+                      <option value="within 1km">within 1km</option>
+                      <option value="1-3 km">1-3 Km</option>
+                      <option value="3-5 km">3-5 Km</option>
+                      <option value="more than 5km">more than 5Km</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="distance_of_community_centers">
+                      <option value="1">Distance of Community Health Centers</option>
+                      <option value="within 1km">within 1km</option>
+                      <option value="1-3 km">1-3 Km</option>
+                      <option value="3-6 km">3-6 Km</option>
+                      <option value="6-10 km">6-10 Km</option>
+                      <option value="more than 10km">more than 10Km</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="distance_of_district_hospital">
+                      <option value="1">Distance of District Hospitals</option>
+                      <option value="within 5km">within 5km</option>
+                      <option value="5-10 km">5-10 Km</option>
+                      <option value="10-20 km">10-20 Km</option>
+                      <option value="20-30 km">20-30 Km</option>
+                      <option value="more than 30km">more than 10Km</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="distance_of_patahology_lab">
+                      <option value="1">Distance of Pathology Lab</option>
+                      <option value="within 3km">within 3km</option>
+                      <option value="3-6 km">3-6 Km</option>
+                      <option value="6-10 km">6-10 Km</option>
+                      <option value="more than 10km">more than 10Km</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="distance_of_medical_store">
+                      <option value="1">Distance of Medical Store</option>
+                      <option value="within 3km">Within 3km</option>
+                      <option value="3-6 km">3-6 Km</option>
+                      <option value="6-10 km">c6-10 Km</option>
+                      <option value="more than 10km">more than 10Km</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="status_of_delivery_of_children">
+                      <option value="1">Status of Delivery of Children</option>
+                      <option value="government hospital">Government hospital</option>
+                      <option value="private hospital/clinics">Private hospital/clinics</option>
+                      <option value="local dai or any other health worker">Local dai or any other health worker"</option>
+                      <option value="any other">Any Other</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="status_of_vaccination_of_children">
+                      <option value="1">Status of Vaccination of Children</option>
+                      <option value="done">Done</option>
+                      <option value="not done">Not Done</option>
+                      <option value="on going">On Going</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="status_of_female_problems">
+                      <option value="1">Status of Female Related Problems</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                      <option value="don't know">Don't Know</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="centrally_issued_health_insurance">
+                      <option value="1">Centrally Issued Health Insurance</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select><br>
+                  </div>
+
+                  <div class="div1">
+                    <select class="select" name="state_issued_health_insurance">
+                      <option value="1">Status Issued Health Insurance</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select><br>
+                  </div>
+                 
+                  <div class="div1">
+                    <select class="select" name=" personal_health_insurance">
+                      <option value="1">Personal Health Insurance</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select><br>
+                  </div>    
+                 
+                  
+                    <div class="form-group div1">
+                      <input type="submit" name="submit" value="submit" class="form-control btn btn-primary submit px-3"  onclick="formValidation()" / >
+                    </div>
+                  </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                
+<script src="{% static 'registerjs/jquery.min.js'%}"></script>
+<script src="{% static 'registerjs/popper.js'%}"></script>
+<script src="{% static 'registerjs/bootstrap.min.js'%}"></script>
+<script src="{% static 'registerjs/main.js'%}"></script>
+</body>
+</html>
+
+
+                        
+

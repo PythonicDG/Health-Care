@@ -1,0 +1,24 @@
+body{
+    margin-top:20px;
+    background:#eee; 
+    
+    
+}
+
+/* .container{
+    
+    /* border:1px solid 
+} */
+h5{
+    text-decoration:underline;
+}
+h6{
+
+    /* width: 300px; */
+    border: 2px solid rgb(20, 20, 20);
+    margin:0 auto;
+}
+.center { text-align: center; }
+.btn{
+    width:100px;
+}

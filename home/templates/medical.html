@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Gill Sans", sans-serif;;
+    }
+
+    header {
+      position: fixed;
+      background: rgba(28,74,90, 5.0);
+      padding: 10px;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .left_area h3 {
+      color: #fff;
+      margin: 0px;
+      text-transform: uppercase;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .left_area span {
+      color: #19B3D3;
+    }
+
+    .logout_btn {
+      padding: 5px;
+      background: #19B3D3;
+      text-decoration: none;
+      float: right;
+      margin-top: -30px;
+      margin-right: 40px;
+      border-radius: 2px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      transition: 0.5s;
+
+    }
+
+    .logout_btn:hover {
+      background: #0B87A6;
+    }
+
+    .sidebar {
+      background: #2f323a;
+      margin-top: 2000px;
+      padding-top: 30px;
+      position: fixed;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      transition: 0.5s;
+      transition-property: left;
+    }
+
+    .sidebar .profile_image {
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+
+    .sidebar h4 {
+      color: #ccc;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 60px;
+      text-decoration: none;
+      padding-left: 40px;
+      box-sizing: border-box;
+      transition: 0.5s;
+
+    }
+
+    .sidebar a:hover {
+      background: #19B3D3;
+    }
+
+    .sidebar i {
+      padding-right: 10px;
+    }
+
+    label #sidebar_btn {
+      z-index: 1;
+      color: #fff;
+      position: fixed;
+      cursor: pointer;
+      left: 220px;
+      padding-left: 0px;
+      font-size: 20px;
+      margin: 5px 0;
+      transition: 0.5s;
+      transition-property: color;
+      margin-top: 17px;
+    }
+
+    label #sidebar_btn:hover {
+      color: #19B3D3;
+    }
+
+    #check:checked~.sidebar {
+      left: -190px;
+    }
+
+    #check:checked~.sidebar a span {
+      display: none;
+    }
+
+    #check:checked~.sidebar a {
+      font-size: 20px;
+      margin-left: 170px;
+      width: 80px;
+    }
+
+    .content {
+      margin-left: 250px;
+      background: url(background.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+      transition: 0.5s;
+    }
+
+    #check:checked~.content {
+      margin-left: 60px;
+    }
+
+    #check {
+      display: none;
+    }
+  </style>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+
+</head>
+
+<body>
+
+  <input type="checkbox" id="check">
+  <!--header area start-->
+  <header style="padding-top: 0px;">
+    <label for="check">
+      <i style=""class="fas fa-bars" id="sidebar_btn"></i>
+    </label>
+    <div class="left_area">
+      <a class="navbar-brand" href="#"><img src="{% static 'home/img/logo3.png'%}" class="img-responsive" style="width: 140px; margin-top: -16px;"></a>
+    </div>
+    <div class="right_area">
+      <a href="{% url 'home:logout' %}" class="logout_btn">Logout</a>
+    </div>
+  </header>
+  <!--header area end-->
+  <!--sidebar start-->
+  <div class="sidebar" style="
+    margin-top: 50px;
+">
+    <center>
+
+      <img src="{% static "image/admin.png" %}" class="profile_image" alt="">
+      <h4>{{user.username}}</h4>
+      
+
+    </center>
+
+    <a href="/home/dashboard"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+    <a href="/home/profile"><i class="fas fa-users"></i><span>Profile</span></a>
+     <a href="/home/medical/"><i class="fas fa-list-alt"></i><span>Medical</span></a>
+    {% comment %} <a href="/admin-policy"><i class="fab fa-product-hunt"></i><span>Policy</span></a> {% endcomment %}
+    
+    <a href="{% url 'home:logout' %}"><i class="fas fa-sign-out"></i><span>Logout</span></a>
+
+
+    
+
+
+  </div>
+  <!--sidebar end-->s
+
+
+  <!--content start-->
+  <div class="content">
+    <br><br><br><br><br>
+    {% block content %}
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+ 
+  </div>
+  <!--content end-->
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration form</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'register/css/style.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
+
+</head>
+<body >
+  <section class="img" onload="resetSelection()" style="background-image: url({% static 'register/images/health1.jpg'%}); width:100%;">
+    <div  class="bg-color p-t-180 p-b-100 font-robo ftco-section" >
+    
+    <div class=""> 
+    <div class="container">
+      <!--form method="POST">
+        {% csrf_token %--}
+<!--body onload="resetSelection()"-->
+
+                
+
+          <div class="row justify-content-center">
+            <div class="col-md-4 text-center mb-4">
+              <h2 class="heading-section">Details</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-3 col-lg-6">
+              <div class="login-wrap">
+                {% if user_data %}
+{% for i in user_data %}
+    
+     <div><strong>Name: </strong>{{i.user.first_name}} {{i.user.last_name}}<br><strong>Gender: </strong>{{i.gender}}<br>
+      <strong>DOB:</strong>{{i.dob}}<br>
+<strong>Blood Group: </strong>{{i.blood_grp}}<br>
+<strong>Mobile: </strong>{{i.mobile}}<br>
+<strong>Email: </strong>{{i.user.email}}<br>
+<strong>Address: </strong>{{i.address}}, {{i.district}}, {{i.state}}-{{i.pincode}}</div><hr style="border: 1px solid white;">
+
+{%endfor%}
+{%endif%} 
+
+                
+                      <!--span class="fa fa-envelope"></span-->
+                    </div>
+                    
+                  </form>
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                
+<script src="{% static 'registerjs/jquery.min.js'%}"></script>
+<script src="{% static 'registerjs/popper.js'%}"></script>
+<script src="{% static 'registerjs/bootstrap.min.js'%}"></script>
+<script src="{% static 'registerjs/main.js'%}"></script>
+</body>
+</html>
+
+
+                        
+
